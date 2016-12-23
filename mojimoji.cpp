@@ -342,7 +342,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #define __PYX_HAVE_API__mojimoji
 #include "string.h"
 #include "stdlib.h"
-#include <tr1/unordered_map>
+#include <unordered_map>
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -537,19 +537,19 @@ struct __pyx_opt_args_8mojimoji_han_to_zen;
 
 /* "mojimoji.pyx":11
  *         size_t count(T&) nogil
- * 
+ *
  * ctypedef unordered_map[Py_UNICODE, Py_UNICODE] table_type             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
 typedef std::tr1::unordered_map<Py_UNICODE,Py_UNICODE> __pyx_t_8mojimoji_table_type;
 
 /* "mojimoji.pyx":114
- * 
- * 
+ *
+ *
  * cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 struct __pyx_opt_args_8mojimoji_zen_to_han {
   int __pyx_n;
@@ -559,11 +559,11 @@ struct __pyx_opt_args_8mojimoji_zen_to_han {
 };
 
 /* "mojimoji.pyx":156
- * 
- * 
+ *
+ *
  * cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 struct __pyx_opt_args_8mojimoji_han_to_zen {
   int __pyx_n;
@@ -1504,11 +1504,11 @@ static PyObject *__pyx_tuple__313;
 static PyObject *__pyx_tuple__314;
 
 /* "mojimoji.pyx":114
- * 
- * 
+ *
+ *
  * cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 
 static PyObject *__pyx_pw_8mojimoji_1zen_to_han(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
@@ -1517,10 +1517,10 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
   int __pyx_v_digit = ((int)1);
 
   /* "mojimoji.pyx":115
- * 
+ *
  * cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,
  *                          bint kana=True):             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) * 2 + 1))
  */
   int __pyx_v_kana = ((int)1);
@@ -1558,9 +1558,9 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
   /* "mojimoji.pyx":117
  *                          bint kana=True):
- * 
+ *
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) * 2 + 1))             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef Py_UNICODE c
  */
   if (unlikely(__pyx_v_text == Py_None)) {
@@ -1571,17 +1571,17 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
   __pyx_v_buf = ((Py_UNICODE *)malloc(((sizeof(Py_UNICODE)) * ((__pyx_t_1 * 2) + 1))));
 
   /* "mojimoji.pyx":120
- * 
+ *
  *     cdef Py_UNICODE c
  *     cdef int pos = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *     for c in text:
  */
   __pyx_v_pos = 0;
 
   /* "mojimoji.pyx":122
  *     cdef int pos = 0
- * 
+ *
  *     for c in text:             # <<<<<<<<<<<<<<
  *         if ascii and ascii_zh_table.count(c):
  *             buf[pos] = ascii_zh_table[c]
@@ -1598,11 +1598,11 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
     __pyx_v_c = __Pyx_PyUnicode_READ(__pyx_t_5, __pyx_t_4, __pyx_t_1);
 
     /* "mojimoji.pyx":123
- * 
+ *
  *     for c in text:
  *         if ascii and ascii_zh_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = ascii_zh_table[c]
- * 
+ *
  */
     __pyx_t_8 = __pyx_v_ascii;
     if (__pyx_t_8) {
@@ -1616,7 +1616,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
  *     for c in text:
  *         if ascii and ascii_zh_table.count(c):
  *             buf[pos] = ascii_zh_table[c]             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif digit and digit_zh_table.count(c):
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_ascii_zh_table[__pyx_v_c]);
@@ -1625,10 +1625,10 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":126
  *             buf[pos] = ascii_zh_table[c]
- * 
+ *
  *         elif digit and digit_zh_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = digit_zh_table[c]
- * 
+ *
  */
     __pyx_t_9 = __pyx_v_digit;
     if (__pyx_t_9) {
@@ -1639,10 +1639,10 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_8) {
 
       /* "mojimoji.pyx":127
- * 
+ *
  *         elif digit and digit_zh_table.count(c):
  *             buf[pos] = digit_zh_table[c]             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif kana and kana_zh_table.count(c):
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_digit_zh_table[__pyx_v_c]);
@@ -1651,10 +1651,10 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":129
  *             buf[pos] = digit_zh_table[c]
- * 
+ *
  *         elif kana and kana_zh_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_zh_table[c]
- * 
+ *
  */
     __pyx_t_8 = __pyx_v_kana;
     if (__pyx_t_8) {
@@ -1665,10 +1665,10 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_9) {
 
       /* "mojimoji.pyx":130
- * 
+ *
  *         elif kana and kana_zh_table.count(c):
  *             buf[pos] = kana_zh_table[c]             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif kana and kana_ten_zh_table.count(c):
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_kana_zh_table[__pyx_v_c]);
@@ -1677,7 +1677,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":132
  *             buf[pos] = kana_zh_table[c]
- * 
+ *
  *         elif kana and kana_ten_zh_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_ten_zh_table[c]
  *             pos += 1
@@ -1691,7 +1691,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_8) {
 
       /* "mojimoji.pyx":133
- * 
+ *
  *         elif kana and kana_ten_zh_table.count(c):
  *             buf[pos] = kana_ten_zh_table[c]             # <<<<<<<<<<<<<<
  *             pos += 1
@@ -1704,7 +1704,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
  *             buf[pos] = kana_ten_zh_table[c]
  *             pos += 1             # <<<<<<<<<<<<<<
  *             buf[pos] = u''
- * 
+ *
  */
       __pyx_v_pos = (__pyx_v_pos + 1);
 
@@ -1712,7 +1712,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
  *             buf[pos] = kana_ten_zh_table[c]
  *             pos += 1
  *             buf[pos] = u''             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif kana and kana_maru_zh_table.count(c):
  */
       (__pyx_v_buf[__pyx_v_pos]) = 65438;
@@ -1721,7 +1721,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":137
  *             buf[pos] = u''
- * 
+ *
  *         elif kana and kana_maru_zh_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_maru_zh_table[c]
  *             pos += 1
@@ -1735,7 +1735,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_9) {
 
       /* "mojimoji.pyx":138
- * 
+ *
  *         elif kana and kana_maru_zh_table.count(c):
  *             buf[pos] = kana_maru_zh_table[c]             # <<<<<<<<<<<<<<
  *             pos += 1
@@ -1748,7 +1748,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
  *             buf[pos] = kana_maru_zh_table[c]
  *             pos += 1             # <<<<<<<<<<<<<<
  *             buf[pos] = u''
- * 
+ *
  */
       __pyx_v_pos = (__pyx_v_pos + 1);
 
@@ -1756,7 +1756,7 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
  *             buf[pos] = kana_maru_zh_table[c]
  *             pos += 1
  *             buf[pos] = u''             # <<<<<<<<<<<<<<
- * 
+ *
  *         else:
  */
       (__pyx_v_buf[__pyx_v_pos]) = 65439;
@@ -1765,10 +1765,10 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
     /*else*/ {
 
       /* "mojimoji.pyx":143
- * 
+ *
  *         else:
  *             buf[pos] = c             # <<<<<<<<<<<<<<
- * 
+ *
  *         pos += 1
  */
       (__pyx_v_buf[__pyx_v_pos]) = __pyx_v_c;
@@ -1777,9 +1777,9 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":145
  *             buf[pos] = c
- * 
+ *
  *         pos += 1             # <<<<<<<<<<<<<<
- * 
+ *
  *     buf[pos] = u'\0'
  */
     __pyx_v_pos = (__pyx_v_pos + 1);
@@ -1788,18 +1788,18 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
   /* "mojimoji.pyx":147
  *         pos += 1
- * 
+ *
  *     buf[pos] = u'\0'             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef unicode ret = buf
  */
   (__pyx_v_buf[__pyx_v_pos]) = 0;
 
   /* "mojimoji.pyx":149
  *     buf[pos] = u'\0'
- * 
+ *
  *     cdef unicode ret = buf             # <<<<<<<<<<<<<<
- * 
+ *
  *     free(buf)
  */
   __pyx_t_10 = __Pyx_PyUnicode_FromUnicode(__pyx_v_buf); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 149; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -1810,19 +1810,19 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
 
   /* "mojimoji.pyx":151
  *     cdef unicode ret = buf
- * 
+ *
  *     free(buf)             # <<<<<<<<<<<<<<
- * 
+ *
  *     return ret
  */
   free(__pyx_v_buf);
 
   /* "mojimoji.pyx":153
  *     free(buf)
- * 
+ *
  *     return ret             # <<<<<<<<<<<<<<
- * 
- * 
+ *
+ *
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_ret);
@@ -1830,11 +1830,11 @@ static PyObject *__pyx_f_8mojimoji_zen_to_han(PyObject *__pyx_v_text, CYTHON_UNU
   goto __pyx_L0;
 
   /* "mojimoji.pyx":114
- * 
- * 
+ *
+ *
  * cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 
   /* function exit code */
@@ -1927,10 +1927,10 @@ static PyObject *__pyx_pw_8mojimoji_1zen_to_han(PyObject *__pyx_self, PyObject *
     } else {
 
       /* "mojimoji.pyx":115
- * 
+ *
  * cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,
  *                          bint kana=True):             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) * 2 + 1))
  */
       __pyx_v_kana = ((int)1);
@@ -1948,11 +1948,11 @@ static PyObject *__pyx_pw_8mojimoji_1zen_to_han(PyObject *__pyx_self, PyObject *
   __pyx_r = __pyx_pf_8mojimoji_zen_to_han(__pyx_self, __pyx_v_text, __pyx_v_ascii, __pyx_v_digit, __pyx_v_kana);
 
   /* "mojimoji.pyx":114
- * 
- * 
+ *
+ *
  * cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 
   /* function exit code */
@@ -1996,11 +1996,11 @@ static PyObject *__pyx_pf_8mojimoji_zen_to_han(CYTHON_UNUSED PyObject *__pyx_sel
 }
 
 /* "mojimoji.pyx":156
- * 
- * 
+ *
+ *
  * cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 
 static PyObject *__pyx_pw_8mojimoji_3han_to_zen(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
@@ -2009,10 +2009,10 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
   int __pyx_v_digit = ((int)1);
 
   /* "mojimoji.pyx":157
- * 
+ *
  * cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,
  *                          bint kana=True):             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  */
   int __pyx_v_kana = ((int)1);
@@ -2051,9 +2051,9 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
   /* "mojimoji.pyx":159
  *                          bint kana=True):
- * 
+ *
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef Py_UNICODE c, prev
  */
   if (unlikely(__pyx_v_text == Py_None)) {
@@ -2064,17 +2064,17 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
   __pyx_v_buf = ((Py_UNICODE *)malloc(((sizeof(Py_UNICODE)) * (__pyx_t_1 + 1))));
 
   /* "mojimoji.pyx":162
- * 
+ *
  *     cdef Py_UNICODE c, prev
  *     cdef int pos = 0             # <<<<<<<<<<<<<<
- * 
+ *
  *     for c in text:
  */
   __pyx_v_pos = 0;
 
   /* "mojimoji.pyx":164
  *     cdef int pos = 0
- * 
+ *
  *     for c in text:             # <<<<<<<<<<<<<<
  *         if ascii and ascii_hz_table.count(c):
  *             buf[pos] = ascii_hz_table[c]
@@ -2091,11 +2091,11 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     __pyx_v_c = __Pyx_PyUnicode_READ(__pyx_t_5, __pyx_t_4, __pyx_t_1);
 
     /* "mojimoji.pyx":165
- * 
+ *
  *     for c in text:
  *         if ascii and ascii_hz_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = ascii_hz_table[c]
- * 
+ *
  */
     __pyx_t_8 = __pyx_v_ascii;
     if (__pyx_t_8) {
@@ -2109,7 +2109,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
  *     for c in text:
  *         if ascii and ascii_hz_table.count(c):
  *             buf[pos] = ascii_hz_table[c]             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif digit and digit_hz_table.count(c):
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_ascii_hz_table[__pyx_v_c]);
@@ -2118,10 +2118,10 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":168
  *             buf[pos] = ascii_hz_table[c]
- * 
+ *
  *         elif digit and digit_hz_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = digit_hz_table[c]
- * 
+ *
  */
     __pyx_t_9 = __pyx_v_digit;
     if (__pyx_t_9) {
@@ -2132,10 +2132,10 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_8) {
 
       /* "mojimoji.pyx":169
- * 
+ *
  *         elif digit and digit_hz_table.count(c):
  *             buf[pos] = digit_hz_table[c]             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif kana and c == u'':
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_digit_hz_table[__pyx_v_c]);
@@ -2144,7 +2144,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":171
  *             buf[pos] = digit_hz_table[c]
- * 
+ *
  *         elif kana and c == u'':             # <<<<<<<<<<<<<<
  *             pos -= 1
  *             buf[pos] = kana_ten_hz_table[prev]
@@ -2158,11 +2158,11 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_9) {
 
       /* "mojimoji.pyx":172
- * 
+ *
  *         elif kana and c == u'':
  *             pos -= 1             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_ten_hz_table[prev]
- * 
+ *
  */
       __pyx_v_pos = (__pyx_v_pos - 1);
 
@@ -2170,7 +2170,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
  *         elif kana and c == u'':
  *             pos -= 1
  *             buf[pos] = kana_ten_hz_table[prev]             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif kana and c == u'':
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_kana_ten_hz_table[__pyx_v_prev]);
@@ -2179,7 +2179,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":175
  *             buf[pos] = kana_ten_hz_table[prev]
- * 
+ *
  *         elif kana and c == u'':             # <<<<<<<<<<<<<<
  *             pos -= 1
  *             buf[pos] = kana_maru_hz_table[prev]
@@ -2193,11 +2193,11 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_8) {
 
       /* "mojimoji.pyx":176
- * 
+ *
  *         elif kana and c == u'':
  *             pos -= 1             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_maru_hz_table[prev]
- * 
+ *
  */
       __pyx_v_pos = (__pyx_v_pos - 1);
 
@@ -2205,7 +2205,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
  *         elif kana and c == u'':
  *             pos -= 1
  *             buf[pos] = kana_maru_hz_table[prev]             # <<<<<<<<<<<<<<
- * 
+ *
  *         elif kana and kana_hz_table.count(c):
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_kana_maru_hz_table[__pyx_v_prev]);
@@ -2214,10 +2214,10 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":179
  *             buf[pos] = kana_maru_hz_table[prev]
- * 
+ *
  *         elif kana and kana_hz_table.count(c):             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_hz_table[c]
- * 
+ *
  */
     __pyx_t_8 = __pyx_v_kana;
     if (__pyx_t_8) {
@@ -2228,10 +2228,10 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     if (__pyx_t_9) {
 
       /* "mojimoji.pyx":180
- * 
+ *
  *         elif kana and kana_hz_table.count(c):
  *             buf[pos] = kana_hz_table[c]             # <<<<<<<<<<<<<<
- * 
+ *
  *         else:
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_kana_hz_table[__pyx_v_c]);
@@ -2240,10 +2240,10 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     /*else*/ {
 
       /* "mojimoji.pyx":183
- * 
+ *
  *         else:
  *             buf[pos] = c             # <<<<<<<<<<<<<<
- * 
+ *
  *         prev = c
  */
       (__pyx_v_buf[__pyx_v_pos]) = __pyx_v_c;
@@ -2252,18 +2252,18 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
     /* "mojimoji.pyx":185
  *             buf[pos] = c
- * 
+ *
  *         prev = c             # <<<<<<<<<<<<<<
  *         pos += 1
- * 
+ *
  */
     __pyx_v_prev = __pyx_v_c;
 
     /* "mojimoji.pyx":186
- * 
+ *
  *         prev = c
  *         pos += 1             # <<<<<<<<<<<<<<
- * 
+ *
  *     buf[pos] = u'\0'
  */
     __pyx_v_pos = (__pyx_v_pos + 1);
@@ -2272,18 +2272,18 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
   /* "mojimoji.pyx":188
  *         pos += 1
- * 
+ *
  *     buf[pos] = u'\0'             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef unicode ret = buf
  */
   (__pyx_v_buf[__pyx_v_pos]) = 0;
 
   /* "mojimoji.pyx":190
  *     buf[pos] = u'\0'
- * 
+ *
  *     cdef unicode ret = buf             # <<<<<<<<<<<<<<
- * 
+ *
  *     free(buf)
  */
   __pyx_t_10 = __Pyx_PyUnicode_FromUnicode(__pyx_v_buf); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 190; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -2294,16 +2294,16 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
 
   /* "mojimoji.pyx":192
  *     cdef unicode ret = buf
- * 
+ *
  *     free(buf)             # <<<<<<<<<<<<<<
- * 
+ *
  *     return ret
  */
   free(__pyx_v_buf);
 
   /* "mojimoji.pyx":194
  *     free(buf)
- * 
+ *
  *     return ret             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
@@ -2312,11 +2312,11 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
   goto __pyx_L0;
 
   /* "mojimoji.pyx":156
- * 
- * 
+ *
+ *
  * cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 
   /* function exit code */
@@ -2409,10 +2409,10 @@ static PyObject *__pyx_pw_8mojimoji_3han_to_zen(PyObject *__pyx_self, PyObject *
     } else {
 
       /* "mojimoji.pyx":157
- * 
+ *
  * cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,
  *                          bint kana=True):             # <<<<<<<<<<<<<<
- * 
+ *
  *     cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
  */
       __pyx_v_kana = ((int)1);
@@ -2430,11 +2430,11 @@ static PyObject *__pyx_pw_8mojimoji_3han_to_zen(PyObject *__pyx_self, PyObject *
   __pyx_r = __pyx_pf_8mojimoji_2han_to_zen(__pyx_self, __pyx_v_text, __pyx_v_ascii, __pyx_v_digit, __pyx_v_kana);
 
   /* "mojimoji.pyx":156
- * 
- * 
+ *
+ *
  * cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,             # <<<<<<<<<<<<<<
  *                          bint kana=True):
- * 
+ *
  */
 
   /* function exit code */
@@ -2875,7 +2875,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
   /* "mojimoji.pyx":15
- * 
+ *
  * ASCII_ZENKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',             # <<<<<<<<<<<<<<
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',
@@ -2886,7 +2886,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__86);
 
   /* "mojimoji.pyx":27
- * 
+ *
  * ASCII_HANKAKU_CHARS = (
  *     u'a', u'b', u'c', u'd', u'e', u'f', u'g', u'h', u'i', u'j', u'k',             # <<<<<<<<<<<<<<
  *     u'l', u'm', u'n', u'o', u'p', u'q', u'r', u's', u't', u'u', u'v',
@@ -2897,7 +2897,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__120);
 
   /* "mojimoji.pyx":39
- * 
+ *
  * KANA_ZENKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',             # <<<<<<<<<<<<<<
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',
@@ -2908,7 +2908,7 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__184);
 
   /* "mojimoji.pyx":49
- * 
+ *
  * KANA_HANKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',             # <<<<<<<<<<<<<<
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',
@@ -2919,29 +2919,29 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__248);
 
   /* "mojimoji.pyx":59
- * 
+ *
  * DIGIT_ZENKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u''             # <<<<<<<<<<<<<<
  * )
- * 
+ *
  */
   __pyx_tuple__259 = PyTuple_Pack(10, __pyx_n_u__249, __pyx_n_u__250, __pyx_n_u__251, __pyx_n_u__252, __pyx_n_u__253, __pyx_n_u__254, __pyx_n_u__255, __pyx_n_u__256, __pyx_n_u__257, __pyx_n_u__258); if (unlikely(!__pyx_tuple__259)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__259);
   __Pyx_GIVEREF(__pyx_tuple__259);
 
   /* "mojimoji.pyx":63
- * 
+ *
  * DIGIT_HANKAKU_CHARS = (
  *     u'0', u'1', u'2', u'3', u'4', u'5', u'6', u'7', u'8', u'9'             # <<<<<<<<<<<<<<
  * )
- * 
+ *
  */
   __pyx_tuple__260 = PyTuple_Pack(10, __pyx_kp_u_0, __pyx_kp_u_1, __pyx_kp_u_2, __pyx_kp_u_3, __pyx_kp_u_4, __pyx_kp_u_5, __pyx_kp_u_6, __pyx_kp_u_7, __pyx_kp_u_8, __pyx_kp_u_9); if (unlikely(!__pyx_tuple__260)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 63; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__260);
   __Pyx_GIVEREF(__pyx_tuple__260);
 
   /* "mojimoji.pyx":67
- * 
+ *
  * KANA_TEN_MAP = (
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u''),             # <<<<<<<<<<<<<<
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u''),
@@ -3037,14 +3037,14 @@ static int __Pyx_InitCachedConstants(void) {
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u''),
  *     (u'', u'')             # <<<<<<<<<<<<<<
  * )
- * 
+ *
  */
   __pyx_tuple__302 = PyTuple_Pack(2, __pyx_n_u__301, __pyx_n_u__187); if (unlikely(!__pyx_tuple__302)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__302);
   __Pyx_GIVEREF(__pyx_tuple__302);
 
   /* "mojimoji.pyx":67
- * 
+ *
  * KANA_TEN_MAP = (
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u''),             # <<<<<<<<<<<<<<
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u''),
@@ -3055,11 +3055,11 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__303);
 
   /* "mojimoji.pyx":75
- * 
+ *
  * KANA_MARU_MAP = (
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u'')             # <<<<<<<<<<<<<<
  * )
- * 
+ *
  */
   __pyx_tuple__305 = PyTuple_Pack(2, __pyx_n_u__304, __pyx_n_u__210); if (unlikely(!__pyx_tuple__305)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__305);
@@ -3188,7 +3188,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
   /*--- Execution code ---*/
 
   /* "mojimoji.pyx":15
- * 
+ *
  * ASCII_ZENKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',             # <<<<<<<<<<<<<<
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',
@@ -3197,7 +3197,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_ASCII_ZENKAKU_CHARS, __pyx_tuple__86) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 14; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":27
- * 
+ *
  * ASCII_HANKAKU_CHARS = (
  *     u'a', u'b', u'c', u'd', u'e', u'f', u'g', u'h', u'i', u'j', u'k',             # <<<<<<<<<<<<<<
  *     u'l', u'm', u'n', u'o', u'p', u'q', u'r', u's', u't', u'u', u'v',
@@ -3206,7 +3206,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_ASCII_HANKAKU_CHARS, __pyx_tuple__120) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 26; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":39
- * 
+ *
  * KANA_ZENKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',             # <<<<<<<<<<<<<<
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',
@@ -3215,7 +3215,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_KANA_ZENKAKU_CHARS, __pyx_tuple__184) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 38; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":49
- * 
+ *
  * KANA_HANKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',             # <<<<<<<<<<<<<<
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u'',
@@ -3224,25 +3224,25 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_KANA_HANKAKU_CHARS, __pyx_tuple__248) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 48; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":59
- * 
+ *
  * DIGIT_ZENKAKU_CHARS = (
  *     u'', u'', u'', u'', u'', u'', u'', u'', u'', u''             # <<<<<<<<<<<<<<
  * )
- * 
+ *
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_DIGIT_ZENKAKU_CHARS, __pyx_tuple__259) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 58; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":63
- * 
+ *
  * DIGIT_HANKAKU_CHARS = (
  *     u'0', u'1', u'2', u'3', u'4', u'5', u'6', u'7', u'8', u'9'             # <<<<<<<<<<<<<<
  * )
- * 
+ *
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_DIGIT_HANKAKU_CHARS, __pyx_tuple__260) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":67
- * 
+ *
  * KANA_TEN_MAP = (
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u''),             # <<<<<<<<<<<<<<
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u''),
@@ -3251,17 +3251,17 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_KANA_TEN_MAP, __pyx_tuple__303) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":75
- * 
+ *
  * KANA_MARU_MAP = (
  *     (u'', u''), (u'', u''), (u'', u''), (u'', u''), (u'', u'')             # <<<<<<<<<<<<<<
  * )
- * 
+ *
  */
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_KANA_MARU_MAP, __pyx_tuple__314) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
   /* "mojimoji.pyx":80
  * cdef table_type ascii_zh_table, ascii_hz_table
- * 
+ *
  * for (z, h) in zip(ASCII_ZENKAKU_CHARS, ASCII_HANKAKU_CHARS):             # <<<<<<<<<<<<<<
  *     ascii_zh_table[z] = h
  *     ascii_hz_table[h] = z
@@ -3331,11 +3331,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
       }
       #if CYTHON_COMPILING_IN_CPYTHON
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_1 = PyTuple_GET_ITEM(sequence, 0); 
-        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 1); 
+        __pyx_t_1 = PyTuple_GET_ITEM(sequence, 0);
+        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 1);
       } else {
-        __pyx_t_1 = PyList_GET_ITEM(sequence, 0); 
-        __pyx_t_6 = PyList_GET_ITEM(sequence, 1); 
+        __pyx_t_1 = PyList_GET_ITEM(sequence, 0);
+        __pyx_t_6 = PyList_GET_ITEM(sequence, 1);
       }
       __Pyx_INCREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_t_6);
@@ -3373,11 +3373,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
     /* "mojimoji.pyx":81
- * 
+ *
  * for (z, h) in zip(ASCII_ZENKAKU_CHARS, ASCII_HANKAKU_CHARS):
  *     ascii_zh_table[z] = h             # <<<<<<<<<<<<<<
  *     ascii_hz_table[h] = z
- * 
+ *
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_h); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
@@ -3393,7 +3393,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
  * for (z, h) in zip(ASCII_ZENKAKU_CHARS, ASCII_HANKAKU_CHARS):
  *     ascii_zh_table[z] = h
  *     ascii_hz_table[h] = z             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef table_type kana_zh_table, kana_hz_table
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_z); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -3410,7 +3410,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
 
   /* "mojimoji.pyx":86
  * cdef table_type kana_zh_table, kana_hz_table
- * 
+ *
  * for (z, h) in zip(KANA_ZENKAKU_CHARS, KANA_HANKAKU_CHARS):             # <<<<<<<<<<<<<<
  *     kana_zh_table[z] = h
  *     kana_hz_table[h] = z
@@ -3480,11 +3480,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
       }
       #if CYTHON_COMPILING_IN_CPYTHON
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0); 
-        __pyx_t_1 = PyTuple_GET_ITEM(sequence, 1); 
+        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0);
+        __pyx_t_1 = PyTuple_GET_ITEM(sequence, 1);
       } else {
-        __pyx_t_3 = PyList_GET_ITEM(sequence, 0); 
-        __pyx_t_1 = PyList_GET_ITEM(sequence, 1); 
+        __pyx_t_3 = PyList_GET_ITEM(sequence, 0);
+        __pyx_t_1 = PyList_GET_ITEM(sequence, 1);
       }
       __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_1);
@@ -3522,11 +3522,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "mojimoji.pyx":87
- * 
+ *
  * for (z, h) in zip(KANA_ZENKAKU_CHARS, KANA_HANKAKU_CHARS):
  *     kana_zh_table[z] = h             # <<<<<<<<<<<<<<
  *     kana_hz_table[h] = z
- * 
+ *
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_h); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
@@ -3542,7 +3542,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
  * for (z, h) in zip(KANA_ZENKAKU_CHARS, KANA_HANKAKU_CHARS):
  *     kana_zh_table[z] = h
  *     kana_hz_table[h] = z             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef table_type digit_zh_table, digit_hz_table
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_z); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -3559,7 +3559,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
 
   /* "mojimoji.pyx":92
  * cdef table_type digit_zh_table, digit_hz_table
- * 
+ *
  * for (z, h) in zip(DIGIT_ZENKAKU_CHARS, DIGIT_HANKAKU_CHARS):             # <<<<<<<<<<<<<<
  *     digit_zh_table[z] = h
  *     digit_hz_table[h] = z
@@ -3629,11 +3629,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
       }
       #if CYTHON_COMPILING_IN_CPYTHON
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 0); 
-        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1); 
+        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 0);
+        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1);
       } else {
-        __pyx_t_6 = PyList_GET_ITEM(sequence, 0); 
-        __pyx_t_3 = PyList_GET_ITEM(sequence, 1); 
+        __pyx_t_6 = PyList_GET_ITEM(sequence, 0);
+        __pyx_t_3 = PyList_GET_ITEM(sequence, 1);
       }
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_t_3);
@@ -3671,11 +3671,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "mojimoji.pyx":93
- * 
+ *
  * for (z, h) in zip(DIGIT_ZENKAKU_CHARS, DIGIT_HANKAKU_CHARS):
  *     digit_zh_table[z] = h             # <<<<<<<<<<<<<<
  *     digit_hz_table[h] = z
- * 
+ *
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_h); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
@@ -3691,7 +3691,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
  * for (z, h) in zip(DIGIT_ZENKAKU_CHARS, DIGIT_HANKAKU_CHARS):
  *     digit_zh_table[z] = h
  *     digit_hz_table[h] = z             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef table_type kana_ten_zh_table, kana_ten_hz_table
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_z); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -3708,7 +3708,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
 
   /* "mojimoji.pyx":98
  * cdef table_type kana_ten_zh_table, kana_ten_hz_table
- * 
+ *
  * for (z, h) in KANA_TEN_MAP:             # <<<<<<<<<<<<<<
  *     kana_ten_zh_table[z] = h
  *     kana_ten_hz_table[h] = z
@@ -3765,11 +3765,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
       }
       #if CYTHON_COMPILING_IN_CPYTHON
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0); 
-        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 1); 
+        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0);
+        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 1);
       } else {
-        __pyx_t_3 = PyList_GET_ITEM(sequence, 0); 
-        __pyx_t_6 = PyList_GET_ITEM(sequence, 1); 
+        __pyx_t_3 = PyList_GET_ITEM(sequence, 0);
+        __pyx_t_6 = PyList_GET_ITEM(sequence, 1);
       }
       __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_6);
@@ -3807,11 +3807,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
     /* "mojimoji.pyx":99
- * 
+ *
  * for (z, h) in KANA_TEN_MAP:
  *     kana_ten_zh_table[z] = h             # <<<<<<<<<<<<<<
  *     kana_ten_hz_table[h] = z
- * 
+ *
  */
     __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_h); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 99; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_1);
@@ -3827,7 +3827,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
  * for (z, h) in KANA_TEN_MAP:
  *     kana_ten_zh_table[z] = h
  *     kana_ten_hz_table[h] = z             # <<<<<<<<<<<<<<
- * 
+ *
  * cdef table_type kana_maru_zh_table, kana_maru_hz_table
  */
     __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_z); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 100; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -3844,7 +3844,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
 
   /* "mojimoji.pyx":104
  * cdef table_type kana_maru_zh_table, kana_maru_hz_table
- * 
+ *
  * for (z, h) in KANA_MARU_MAP:             # <<<<<<<<<<<<<<
  *     kana_maru_zh_table[z] = h
  *     kana_maru_hz_table[h] = z
@@ -3901,11 +3901,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
       }
       #if CYTHON_COMPILING_IN_CPYTHON
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 0); 
-        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1); 
+        __pyx_t_6 = PyTuple_GET_ITEM(sequence, 0);
+        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 1);
       } else {
-        __pyx_t_6 = PyList_GET_ITEM(sequence, 0); 
-        __pyx_t_3 = PyList_GET_ITEM(sequence, 1); 
+        __pyx_t_6 = PyList_GET_ITEM(sequence, 0);
+        __pyx_t_3 = PyList_GET_ITEM(sequence, 1);
       }
       __Pyx_INCREF(__pyx_t_6);
       __Pyx_INCREF(__pyx_t_3);
@@ -3943,11 +3943,11 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "mojimoji.pyx":105
- * 
+ *
  * for (z, h) in KANA_MARU_MAP:
  *     kana_maru_zh_table[z] = h             # <<<<<<<<<<<<<<
  *     kana_maru_hz_table[h] = z
- * 
+ *
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_h); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 105; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
     __Pyx_GOTREF(__pyx_t_2);
@@ -3963,7 +3963,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
  * for (z, h) in KANA_MARU_MAP:
  *     kana_maru_zh_table[z] = h
  *     kana_maru_hz_table[h] = z             # <<<<<<<<<<<<<<
- * 
+ *
  * del ASCII_HANKAKU_CHARS, ASCII_ZENKAKU_CHARS,\
  */
     __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_z); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 106; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -3980,7 +3980,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
 
   /* "mojimoji.pyx":108
  *     kana_maru_hz_table[h] = z
- * 
+ *
  * del ASCII_HANKAKU_CHARS, ASCII_ZENKAKU_CHARS,\             # <<<<<<<<<<<<<<
  *     KANA_HANKAKU_CHARS, KANA_ZENKAKU_CHARS,\
  *     DIGIT_HANKAKU_CHARS, DIGIT_ZENKAKU_CHARS,\
@@ -3997,7 +3997,7 @@ PyMODINIT_FUNC PyInit_mojimoji(void)
   /* "mojimoji.pyx":1
  * # distutils: language=c++             # <<<<<<<<<<<<<<
  * # -*- coding: utf-8 -*-
- * 
+ *
  */
   __pyx_t_1 = PyDict_New(); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
